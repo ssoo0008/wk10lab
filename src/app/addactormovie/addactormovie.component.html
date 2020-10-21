@@ -1,0 +1,38 @@
+<div class="section table-responsive col-md-6">
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Birth Year</th>
+            <th>Select Actor</th>
+
+        </tr>
+        <tr *ngFor="let actor of actorsDB">
+            <td>{{actor.name}}</td>
+            <td>{{actor.bYear}}</td>
+            <td><button class="btn" [ngClass]="{'btn-primary': actorId != actor._id,'btn-danger': actorId == actor._id}"
+                    (click)="actorSelect(actor)">
+                    {{actorId != actor._id ? 'Select Actor' : 'Selected'}}
+                </button></td>
+        </tr>
+    </table>
+</div>
+
+<div class="section table-responsive col-md-6">
+    <table class="table table-striped">
+        <tr>
+            <th>Movie Title</th>
+            <th>Year</th>
+            <th>Select Movie</th>
+        </tr>
+        <tr *ngFor="let movie of moviesDB">
+            <td>{{movie.title}}</td>
+            <td>{{movie.year}}</td>
+            <td><button class="btn" [ngClass]="{'btn-primary': movieId != movie._id,'btn-danger': movieId == movie._id}"
+                    (click)="movieSelect(movie)">
+                    {{movieId != movie._id ? 'Select Movie' : 'Selected'}}
+                </button></td>
+        </tr>
+    </table>
+
+    <button type="submit" class="btn btn-primary" (click)="onAddActorMovie()">Add {{fullName}} to {{title}}</button>
+</div>
