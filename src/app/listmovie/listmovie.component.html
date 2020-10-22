@@ -1,15 +1,19 @@
-<div class="section">
+<div class="section cont-pad">
     <table class="table table-striped">
-        <tr>
-            <th>Movie Title</th>
-            <th>Year</th>
-            <th>Actors</th>
+        <thead class="thead-dark">
+            <tr>
+                <th>Movie Title</th>
+                <th>Year</th>
+                <th>Actors</th>
 
-        </tr>
-        <tr *ngFor="let movie of moviesDB">
-            <td>{{movie.title}}</td>
-            <td>{{movie.year}}</td>
-            <td>{{onListActors(movie)}}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of moviesDB">
+                <td>{{movie.title}}</td>
+                <td>{{movie.year}}</td>
+                <td>{{onListActors(movie)}}</td>
 
-        </tr>
+            </tr>
+        </tbody>
     </table>

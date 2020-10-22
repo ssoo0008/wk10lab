@@ -1,14 +1,18 @@
-<div class="section">
+<div class="section cont-pad">
     <table class="table table-striped">
-        <tr>
-            <th>Name</th>
-            <th>Birth Year</th>
-            <th>Delete?</th>
-        </tr>
-        <tr *ngFor="let item of actorsDB">
-            <td>{{item.name}}</td>
-            <td>{{item.bYear}}</td>
-            <td><button type="submit" class="btn btn-primary" (click)="onDeleteActor(item)">Delete</button></td>
-        </tr>
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Birth Year</th>
+                <th>Delete?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of actorsDB">
+                <td>{{item.name}}</td>
+                <td>{{item.bYear}}</td>
+                <td><button type="submit" class="btn btn-danger" (click)="onDeleteActor(item)">Delete</button></td>
+            </tr>
+        </tbody>
     </table>
 </div>
